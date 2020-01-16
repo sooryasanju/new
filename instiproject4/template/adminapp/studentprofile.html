@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends "adminapp/studentindex.html" %}
+    {% block body_block %}
+
+<br><br><br><br><br>
+
+<h1> STUDENT DETAILS</h1>
+<br><br><br>
+
+     {% for val in object %}
+
+        {% if val.image.url|length > 0 %}
+            <img src="{{ val.image.url }}" height="150" width="150"></br>
+
+        {% endif %}
+
+        User Name:{{ val.user_name }}</br>
+        Address:{{ val.user_address }}</br>
+        Mobile:{{ val.user_mobile }}</br>
+        Doj:{{ val.user_doj }}</br>
+        Email:{{ val.user_email }}</br>
+        User_userName:{{ val.user_username }}</br>
+        Password:{{ val.user_password }}</br>
+        Course Name:{{ val.course_name }}</br>
+        Batch Name:{{ val.batch_name }}</br>
+        Payment:{{ val.user_payment }}</br>
+        <br>
+<a href="{% url 'editprofile' val.id %} ">EDIT</a><br><br>
+
+
+
+    {% endfor %}
+
+
+
+{% endblock %}
+

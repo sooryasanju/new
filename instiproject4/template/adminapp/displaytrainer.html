@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends "adminapp/hrindex.html" %}
+    {% block body_block %}
+
+<br><br><br><br><br>
+<h1> TRAINER DETAILS</h1>
+<br><br><br>
+<table border="2">
+    <tr>
+        <td>Trainer Id</td>
+        <td>Course Name</td>
+        <td>Trainer Name</td>
+        <td>Trainer Mobile</td>
+        <td>Trainer DOJ </td>
+        <td>Trainer Email</td>
+        <td>Trainer Username</td>
+        <td>Trainer Password</td>
+        <td>RoleName</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+     {% for val in object_list %}
+    <tr>
+        <td>{{ val.id }}</td>
+        <td>{{ val.course_name }}</td>
+        <td>{{ val.trainer_name }}</td>
+        <td>{{ val.trainer_mobile }}</td>
+        <td>{{ val.trainer_doj }}</td>
+        <td>{{ val.trainer_email }}</td>
+        <td>{{ val.trainer_username }}</td>
+        <td>{{ val.trainer_password }}</td>
+        <td>{{ val.role_name }}</td>
+        <td><a href="{% url 'editdata' val.id %}">Edit</a></td>
+        <td><a href="{% url 'deletedata' val.id %}">Delete</a></td>
+
+     
+    </tr>
+
+
+
+    {% endfor %}
+
+</table>
+{% endblock %}
+

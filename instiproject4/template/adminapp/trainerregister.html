@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "adminapp/hrindex.html" %}
+    {% block body_block %}
+<br><br><br><br>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+
+
+    <input type="submit" value="submit">
+        <br><br>
+
+    </form>
+{% endblock %}}

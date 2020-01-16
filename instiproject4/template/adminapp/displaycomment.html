@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends "adminapp/studentindex.html" %}
+    {% block body_block %}
+
+<br><br><br><br><br>
+<h1> DISPLAY COMMENTS </h1>
+<br><br><br>
+<table border="2">
+    <tr>
+        <td>Trainer</td>
+        <td>FeedBack</td>
+        <td>Comment</td>
+
+    </tr>
+     {% for val in object %}
+    <tr>
+        <td>{{ val.trainer_name }}</td>
+        <td>{{ val.feedback_data }}</td>
+        <td>{{ val.feedback_comment }}</td>
+
+
+    </tr>
+
+
+
+    {% endfor %}
+
+</table>
+ <td><a href="{% url 'studentfeedback' %}">Back</a></td>
+{% endblock %}
+

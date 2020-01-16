@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends "adminapp/trainerindex.html" %}
+    {% block body_block %}
+
+<br><br><br><br><br>
+
+<h1> FEEDBACK </h1>
+<br><br><br>
+<table border="2">
+    <tr>
+        <td>Feedback Id</td>
+        <td>Feedback Date</td>
+        <td>Feedback Data</td>
+        <td>Comment</td>
+        <td>add Comments</td>
+
+
+    </tr>
+     {% for val in object %}
+    <tr>
+
+        <td>{{ val.id }}</td>
+        <td>{{ val.feedback_date }}</td>
+        <td>{{ val.feedback_data}}</td>
+        <td>{{ val.feedback_comment }}</td>
+        <td><a href="{% url 'addcomments' val.id %}">AddComments</a></td>
+
+
+
+
+    </tr>
+
+
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}
+

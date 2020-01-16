@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "adminapp/trainerindex.html" %}
+    {% block body_block %}
+<br><br><br><br>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p}}
+
+
+    <input type="submit" value="Submit">
+        <a href="{% url 'viewfeedback' %}">back</a>
+        <br><br>
+
+    </form>
+{% endblock %}}

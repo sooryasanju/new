@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends "adminapp/base.html" %}
+    {% block body_block %}
+
+<br><br><br><br><br><br>
+<center><h3> COURSE AVAILABLE</h3></center>
+<br><br><br>
+<center><table border="2">
+    <tr>
+        <td>Course</td>
+        <td>Fees</td>
+        
+    </tr>
+    {% for val in object_list %}
+    <tr>
+        <td>{{ val.course_name }}</td>
+        <td>{{ val.course_fee }}</td>
+       
+    </tr>
+
+
+
+    {% endfor %}
+
+</table></center>
+<br><br><br><br>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

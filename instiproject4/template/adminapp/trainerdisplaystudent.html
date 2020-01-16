@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends "adminapp/trainerindex.html" %}
+    {% block body_block %}
+
+<br><br><br><br><br>
+
+<h1> STUDENT DETAILS</h1>
+<br><br><br>
+<table border="2">
+    <tr>
+
+        <td>Student Name</td>
+        <td>Student Address</td>
+        <td>Student Mobile</td>
+        <td>Student Email</td>
+        <td>Course Name</td>
+        <td>Batch Name</td>
+
+    </tr>
+     {% for val in object %}
+    <tr>
+
+        <td>{{ val.user_name }}</td>
+        <td>{{ val.user_address }}</td>
+        <td>{{ val.user_mobile }}</td>
+        <td>{{ val.user_email }}</td>
+        <td>{{ val.course_name }}</td>
+        <td>{{ val.batch_name }}</td>
+
+
+
+    </tr>
+
+
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}
+

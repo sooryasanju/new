@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "adminapp/hrindex.html" %}
+    {% block body_block %}
+<br><br><br><br><br><br><br><br>
+ <table border="1">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Course</th>
+            <th>Batch</th>
+            <th>Company</th>
+            <th>Placement Date</th>
+
+        </tr>
+        </thead>
+        {% for stud in object_list %}
+<tbody>
+            <td>{{ stud.user_name }}</td>
+     <td><img src="{{ stud.image.url }}" alt="" height="50" width="50"></td>
+            <td>{{stud.course_name}}</td>
+            <td>{{stud.batch_name}}</td>
+            <td>{{stud.company}}</td>
+            <td>{{stud.placement_date}}</td>
+
+
+      {% endfor %}
+     </tbody>
+
+ </table>
+{% endblock %}}
